@@ -8,7 +8,7 @@
     "socket.io",
     "barnacles"
   ],
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "node": ">=6.0.0"
   },
@@ -18,7 +18,7 @@
     "url": "https://github.com/reelyactive/barnacles-socketio.git"
   },
   "dependencies": {
-    "socket.io": ">=2.2.0"
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {},
   "bugs": {
