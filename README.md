@@ -31,11 +31,23 @@ barnacles.addInterface(BarnaclesSocketIO, { /* See options below */ });
 Options
 -------
 
-__barnacles-socketio__ supports the following two options:
+__barnacles-socketio__ supports the following three options:
+
+### io
+
+Provide an existing socket.io instance to use.
+
+```javascript
+const io = require('socket.io')(3001);
+
+/* ... */
+
+barnacles.addInterface(BarnaclesSocketIO, { io: io });
+```
 
 ### server
 
-Provide an instantiated server for socket.io to use.  For example, in the case of an Express server, the code will be similar to the following:
+In the absence of an _io_ option (as above), instead provide an instantiated server for socket.io to use.  For example, in the case of an Express server, the code will be similar to the following:
 
 ```javascript
 const http = require('http');
@@ -52,7 +64,7 @@ barnacles.addInterface(BarnaclesSocketIO, { server: server });
 
 ### port
 
-In the absence of a _server_ option (as above), __barnacles-socketio__ will have socket.io instantiate its own server, listening on the provided port.  If no port is provided, the server will listen on the default port (3001).  The code is as follows:
+In the absence of an _io_ or _server_ option (as above), __barnacles-socketio__ will have socket.io instantiate its own server, listening on the provided port.  If no port is provided, the server will listen on the default port (3001).  The code is as follows:
 
 ```javascript
 /* ... */
